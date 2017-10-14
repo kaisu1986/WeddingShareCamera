@@ -2,9 +2,9 @@
 using Android.Widget;
 using Android.OS;
 
-namespace WeddingShareCamera
+namespace WeddingSharePhoto
 {
-    [Activity(Label = "WeddingShareCamera", MainLauncher = true, Icon = "@mipmap/icon")]
+    [Activity(Label = "WeddingSharePhoto", MainLauncher = true, Icon = "@mipmap/icon")]
     public class MainActivity : Activity
     {
         int count = 1;

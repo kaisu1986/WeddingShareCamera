@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("WeddingShareCamera.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("WeddingSharePhoto.Resource", IsApplication=true)]
 
-namespace WeddingShareCamera
+namespace WeddingSharePhoto
 {
 	
 	
