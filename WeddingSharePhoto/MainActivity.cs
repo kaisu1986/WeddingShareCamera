@@ -1,14 +1,26 @@
 ﻿using Android.App;
 using Android.Widget;
 using Android.OS;
+using Firebase;
 using Firebase.Database;
-using System;
+using System.Diagnostics;
 using Java.Util;
 using Android.Runtime;
+using GoogleGson;
+using Newtonsoft.Json;
+
+namespace WeddingSharePhoto.Data
+{
+    public class Users
+    {
+        public bool matsubara;
+        public bool tetodon;
+    }
+}
 
 namespace WeddingSharePhoto
 {
-    public class UsersValueEventListener : Java.Lang.Object, IValueEventListener
+    class ValueEventListener<T> : Java.Lang.Object, IValueEventListener
     {
         public void OnCancelled(DatabaseError error)
         {
@@ -19,6 +31,18 @@ namespace WeddingSharePhoto
             if (snapshot.Exists() && snapshot.HasChildren)
             {
                 HashMap dataHashMap = snapshot.Value.JavaCast<HashMap>();
+                Gson gson = new GsonBuilder().Create();
+                string chatItemDaataString = gson.ToJson(dataHashMap);
+                System.Diagnostics.Debug.WriteLine(chatItemDaataString);
+
+                try
+                {
+                    Data.Users items = JsonConvert.DeserializeObject<Data.Users>(chatItemDaataString);
+                }
+                catch
+                {
+
+                }
             }
         }
     }
@@ -26,7 +50,6 @@ namespace WeddingSharePhoto
     [Activity(Label = "WeddingSharePhoto", MainLauncher = true, Icon = "@mipmap/icon")]
     public class MainActivity : Activity
     {
-        DatabaseReference mDatabase;
         int count = 1;
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -45,10 +68,7 @@ namespace WeddingSharePhoto
                 button.Text = string.Format("{0} clicks!", count++);
             };
 
-            mDatabase = FirebaseDatabase.Instance.Reference;
-
-            var users = mDatabase.Child("users");
-            users.AddValueEventListener(new UsersValueEventListener());
+            FirebaseDatabase.Instance.GetReference("users").AddValueEventListener(new ValueEventListener<Data.Users>());
         }
     }
 }
