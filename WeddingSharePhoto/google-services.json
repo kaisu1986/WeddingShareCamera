@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "908544254619",
+    "firebase_url": "https://wedding-share-photo.firebaseio.com",
+    "project_id": "wedding-share-photo",
+    "storage_bucket": "wedding-share-photo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:908544254619:android:3d98441c8ff09c7a",
+        "android_client_info": {
+          "package_name": "com.mofumofu.WeddingSharePhoto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "908544254619-opchenbc1n59oegsdni9vorahgh3dgr8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFVNV_erfgV-dHj_EG3UdNeKo0yN_kAmc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

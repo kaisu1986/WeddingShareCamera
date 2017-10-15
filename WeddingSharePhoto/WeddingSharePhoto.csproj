@@ -51,6 +51,9 @@
     <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="GoogleGson, Version=2.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\GoogleGson.2.8.1\lib\MonoAndroid\GoogleGson.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -96,6 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="GettingStarted.Xamarin" />
+    <GoogleServicesJson Include="google-services.json" />
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml" />
